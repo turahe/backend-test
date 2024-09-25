@@ -5,11 +5,12 @@ namespace Tests\Feature;
 use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Testing\Fluent\AssertableJson;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class BookTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_delete_the_book()
     {
         $author = Author::factory()->create();
@@ -21,7 +22,7 @@ class BookTest extends TestCase
             ->assertStatus(204);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_update_the_book()
     {
         $author = Author::factory()->create();
@@ -48,7 +49,7 @@ class BookTest extends TestCase
 
     }
 
-    /** @test */
+    #[Test]
     public function it_can_find_the_author()
     {
         $author = Author::factory()->create();
@@ -66,7 +67,7 @@ class BookTest extends TestCase
             );
     }
 
-    /** @test */
+    #[Test]
     public function it_can_create_the_book()
     {
 
@@ -90,7 +91,7 @@ class BookTest extends TestCase
 
     }
 
-    /** @test */
+    #[Test]
     public function it_can_list_all_the_books()
     {
         $author = Author::factory()->create();

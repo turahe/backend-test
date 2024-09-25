@@ -6,10 +6,11 @@ use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\QueryException;
+use PHPUnit\Framework\Attributes\Test;
 
 class AuthorTest extends \Tests\TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_list_books()
     {
         $author = Author::factory()->create();
@@ -28,7 +29,7 @@ class AuthorTest extends \Tests\TestCase
 
     }
 
-    /** @test */
+    #[Test]
     public function it_can_create_the_authors()
     {
         $data = [
@@ -44,7 +45,7 @@ class AuthorTest extends \Tests\TestCase
         $this->assertEquals($data['birth_date'], $author->birth_date->format('Y-m-d'));
     }
 
-    /** @test */
+    #[Test]
     public function it_can_delete_a_author()
     {
         $author = Author::factory()->create();
@@ -55,7 +56,7 @@ class AuthorTest extends \Tests\TestCase
         $this->assertDatabaseMissing('authors', ['name' => $author->name]);
     }
 
-    /** @test */
+    #[Test]
     public function it_errors_when_updating_the_author()
     {
         $author = Author::factory()->create();
@@ -64,7 +65,7 @@ class AuthorTest extends \Tests\TestCase
         $author->update(['name' => null]);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_update_the_author()
     {
         $author = Author::factory()->create();
@@ -75,7 +76,7 @@ class AuthorTest extends \Tests\TestCase
         $this->assertEquals('Nur Wachid', $author->name);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_find_the_author()
     {
         $author = Author::factory()->create();
@@ -85,7 +86,7 @@ class AuthorTest extends \Tests\TestCase
         $this->assertEquals($author->name, $found->name);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_list_all_authors()
     {
         $author = Author::factory(2)->create();

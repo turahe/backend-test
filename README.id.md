@@ -17,7 +17,8 @@ Untuk menyiapkan kode untuk pengembangan lokal dari sumber GitHub, ikuti langkah
 
 7. **Jalankan Migrasi dan seed data dummy**: Jalankan `php artisan migrate:seed` untuk menyiapkan skema basis data Anda.
 8. **Buat dokumen api**: Gunakan `php artisan scribe:generate`. Dapat diakses melalui <http://localhost:8000/docs>
-9. **Layani Aplikasi**: Terakhir, jalankan `php artisan serve` untuk memulai server pengembangan lokal <http://localhost:8000>.
+9. **Layani Aplikasi**: jalankan `php artisan serve` untuk memulai server pengembangan lokal <http://localhost:8000>.
+10. **Lihat hasil unit test**: Jalankan perintah `php artisan test` atau `./vendor/bin/phpunit --testdox` untuk mengecek hasil unit test
 
 ## pilihan desain yang saya buat dan teknik penyetelan performa yang saya terapkan
 

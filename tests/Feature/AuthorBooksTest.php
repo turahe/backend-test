@@ -5,11 +5,12 @@ namespace Tests\Feature;
 use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Testing\Fluent\AssertableJson;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 
 class AuthorBooksTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_list_all_the_authors_books()
     {
         $author = Author::factory()->create();

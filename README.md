@@ -10,8 +10,8 @@ To set up code for local development from a GitHub source, follow these steps:
 6. **Set Up Database**: Configure your database settings in the `.env` file.
 7. **Run Migrations and seed data dummy**: Execute `php artisan migrate:seed` to set up your database schema.
 8. **Generate api docs**: Use `php artisan scribe:generate`. Can be access via <http://localhost:8000/docs>
-9. **Serve the Application**: Finally, run `php artisan serve` to start the local development server <http://localhost:8000>.
-
+9. **Serve the Application**: run `php artisan serve` to start the local development server <http://localhost:8000>.
+10. **View unit test results**: Run the command `php artisan test` or `./vendor/bin/phpunit --testdox` to check the unit test results.
 
 ## the design choices I made and the performance tuning techniques I implemented
 

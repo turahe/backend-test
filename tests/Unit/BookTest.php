@@ -5,10 +5,11 @@ namespace Tests\Unit;
 use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Database\QueryException;
+use PHPUnit\Framework\Attributes\Test;
 
 class BookTest extends \Tests\TestCase
 {
-    /** @test */
+    #[Test]
     public function it_can_create_the_book()
     {
         $author = Author::factory()->create();
@@ -27,7 +28,7 @@ class BookTest extends \Tests\TestCase
         //        $this->assertEquals($data['publish_date'], $book->getOriginal('publish_date'));
     }
 
-    /** @test */
+    #[Test]
     public function it_can_delete_a_book()
     {
         $author = Author::factory()->create();
@@ -41,7 +42,7 @@ class BookTest extends \Tests\TestCase
         $this->assertDatabaseMissing('books', ['title' => $book->title]);
     }
 
-    /** @test */
+    #[Test]
     public function it_errors_when_updating_the_book()
     {
         $author = Author::factory()->create();
@@ -53,7 +54,7 @@ class BookTest extends \Tests\TestCase
         $book->update(['title' => null]);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_update_the_book()
     {
         $author = Author::factory()->create();
@@ -67,7 +68,7 @@ class BookTest extends \Tests\TestCase
         $this->assertEquals('This title book', $book->title);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_find_the_book()
     {
         $author = Author::factory()->create();
@@ -80,7 +81,7 @@ class BookTest extends \Tests\TestCase
         $this->assertEquals($book->title, $found->title);
     }
 
-    /** @test */
+    #[Test]
     public function it_can_list_all_books()
     {
         $author = Author::factory()->create();
